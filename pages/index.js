@@ -1,71 +1,44 @@
-import Layout from '../components/myLayout';
-import Link from 'next/link';
-
-function getPosts() {
-  return [
-    { id: 'hello-nextjs', title: 'Hello Next.js' },
-    { id: 'learn-nextjs', title: 'Learn Next.js is awesome' },
-    { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT' }
-  ];
-}
-
-const PostLink = ({ post }) => (
-    <li>
-        <Link href="/p/[id]" as={`/p/${post.id}`}>
-            <a>{post.title}</a>
-        </Link>
-        <style jsx>{`
-            li {
-                list - style: none;
-                margin: 5 px 0;
-            }
-
-            a {
-                text - decoration: none;
-                color: blue;
-                font - family: 'Arial';
-            }
-
-            a: hover {
-                opacity: 0.6;
-            }
-        `}</style>
-    </li>
-);
+import Layout from "../components/myLayout";
+import React, { useState } from "react";
+import HabitBox from "../components/HabitBox";
+import Link from "next/link";
 
 export default function Blog() {
-    return(
-        <Layout>
-            <h1>My Blog</h1>
-            <u1>
-                {getPosts().map(post => (
-                    <PostLink key={post.id} post={post} />
-                ))}
-            </u1>
-            <style jsx>{`
-                h1,
-                a {
-                font-family: 'Arial';
-                }
-
-                ul {
-                padding: 0;
-                }
-
-                li {
-                list-style: none;
-                margin: 5px 0;
-                }
-
-                a {
-                text-decoration: none;
-                color: blue;
-                }
-
-                a:hover {
-                opacity: 0.6;
-                }
-            `}</style>
-        </Layout>
-    )
+  const [name, setName] = useState("");
+  const [boxData, setBoxes] = useState([]);
+  return (
+    <Layout>
+      <h1>My Blog</h1>
+      <h1>Number of boxes is {boxData.length}</h1>
+      <button
+        onClick={() => {
+          setBoxes([...boxData, { key: boxData.length + 1, name: name }]);
+          setName("");
+        }}
+      >
+        Add Box
+      </button>
+      <input
+        value={name}
+        onChange={e => setName(e.target.value)}
+        type="text"
+      ></input>
+      {boxData.map(box => (
+        <>
+          <br></br>
+          <hr></hr>
+          {box.name}
+          <HabitBox name={name} key={box.key} />
+          <button
+            onClick={() => {
+              var boxArr = boxData.filter(o => o.key !== box.key);
+              setBoxes(boxArr);
+            }}
+          >
+            Remove Box
+          </button>
+        </>
+      ))}
+    </Layout>
+  );
 }
