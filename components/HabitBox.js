@@ -1,13 +1,17 @@
 import React from 'react'
 
+const box_style = {
+    width: "20px",
+    height: "20px",
+    border: "2px solid"
+}
+
 function HabitBox(props) {
-    if (props.name == 'Evan') {
-        return (
-            <p>Hello pussy</p>
-        )
-    }
     return (
-        <p>Hello { props.name }</p>
+        <>
+            <p style={box_style}></p>
+            <p>Hello { props.name }</p>
+        </>
     )
 }
 
