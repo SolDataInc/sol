@@ -4,6 +4,11 @@ import Toggle from "../components/Toggle";
 import React, { useState } from "react";
 import Link from "next/link";
 
+const mongoose = require("mongoose");
+
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGO_URI);
+
 class Welcome extends React.Component {
   render() {
     return (

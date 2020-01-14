@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -152,6 +152,151 @@ class Clock extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     }, this.state.date.toLocaleTimeString()));
   }
 
+}
+
+/***/ }),
+
+/***/ "./components/LoginControl.js":
+/*!************************************!*\
+  !*** ./components/LoginControl.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LoginControl; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/evan/work/habits/components/LoginControl.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+class LoginControl extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {
+      isLoggedIn: false
+    };
+  }
+
+  handleLoginClick() {
+    this.setState({
+      isLoggedIn: true
+    });
+  }
+
+  handleLogoutClick() {
+    this.setState({
+      isLoggedIn: false
+    });
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+
+    if (isLoggedIn) {
+      button = __jsx(LogoutButton, {
+        onClick: this.handleLogoutClick,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      });
+    } else {
+      button = __jsx(LoginButton, {
+        onClick: this.handleLoginClick,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      });
+    }
+
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, __jsx(Greeting, {
+      isLoggedIn: isLoggedIn,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), button);
+  }
+
+}
+
+function LoginButton(props) {
+  return __jsx("button", {
+    onClick: props.onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, "Login");
+}
+
+function LogoutButton(props) {
+  return __jsx("button", {
+    onClick: props.onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }, "Logout");
+}
+
+function UserGreeting() {
+  return __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, "You made it!");
+}
+
+function GuestGreeting() {
+  return __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }, "Who are you?");
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+
+  if (isLoggedIn) {
+    return __jsx(UserGreeting, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    });
+  } else {
+    return __jsx(GuestGreeting, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    });
+  }
 }
 
 /***/ }),
@@ -275,30 +420,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./components/header.js");
+/* harmony import */ var _LoginControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LoginControl */ "./components/LoginControl.js");
 var _jsxFileName = "/home/evan/work/habits/components/myLayout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 const layoutStyle = {
   margin: 20,
   padding: 20,
   border: '1px solid #DDD'
 };
+const loginStyle = {
+  position: "absolute",
+  left: "90%",
+  top: "3%"
+};
 
 const Layout = props => __jsx("div", {
   style: layoutStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 17
   },
   __self: undefined
 }, __jsx(_header__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 18
   },
   __self: undefined
-}), props.children);
+}), __jsx("div", {
+  style: loginStyle,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}, __jsx(_LoginControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 20
+  },
+  __self: undefined
+})), props.children);
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -2194,7 +2359,7 @@ function Blog() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

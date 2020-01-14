@@ -96,6 +96,181 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./components/LoginControl.js":
+/*!************************************!*\
+  !*** ./components/LoginControl.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LoginControl; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+var _jsxFileName = "/home/evan/work/habits/components/LoginControl.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+var LoginControl =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(LoginControl, _React$Component);
+
+  function LoginControl(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, LoginControl);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(LoginControl).call(this, props));
+    _this.handleLoginClick = _this.handleLoginClick.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.handleLogoutClick = _this.handleLogoutClick.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.state = {
+      isLoggedIn: false
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(LoginControl, [{
+    key: "handleLoginClick",
+    value: function handleLoginClick() {
+      this.setState({
+        isLoggedIn: true
+      });
+    }
+  }, {
+    key: "handleLogoutClick",
+    value: function handleLogoutClick() {
+      this.setState({
+        isLoggedIn: false
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoggedIn = this.state.isLoggedIn;
+      var button;
+
+      if (isLoggedIn) {
+        button = __jsx(LogoutButton, {
+          onClick: this.handleLogoutClick,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        });
+      } else {
+        button = __jsx(LoginButton, {
+          onClick: this.handleLoginClick,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          },
+          __self: this
+        });
+      }
+
+      return __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, __jsx(Greeting, {
+        isLoggedIn: isLoggedIn,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }), button);
+    }
+  }]);
+
+  return LoginControl;
+}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
+
+
+
+function LoginButton(props) {
+  return __jsx("button", {
+    onClick: props.onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, "Login");
+}
+
+function LogoutButton(props) {
+  return __jsx("button", {
+    onClick: props.onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }, "Logout");
+}
+
+function UserGreeting() {
+  return __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, "You made it!");
+}
+
+function GuestGreeting() {
+  return __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }, "Who are you?");
+}
+
+function Greeting(props) {
+  var isLoggedIn = props.isLoggedIn;
+
+  if (isLoggedIn) {
+    return __jsx(UserGreeting, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    });
+  } else {
+    return __jsx(GuestGreeting, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    });
+  }
+}
+
+/***/ }),
+
 /***/ "./components/Toggle.js":
 /*!******************************!*\
   !*** ./components/Toggle.js ***!
@@ -248,14 +423,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./components/header.js");
+/* harmony import */ var _LoginControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LoginControl */ "./components/LoginControl.js");
 var _jsxFileName = "/home/evan/work/habits/components/myLayout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 var layoutStyle = {
   margin: 20,
   padding: 20,
   border: '1px solid #DDD'
+};
+var loginStyle = {
+  position: "absolute",
+  left: "90%",
+  top: "3%"
 };
 
 var Layout = function Layout(props) {
@@ -263,16 +445,29 @@ var Layout = function Layout(props) {
     style: layoutStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 17
     },
     __self: this
   }, __jsx(_header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 18
     },
     __self: this
-  }), props.children);
+  }), __jsx("div", {
+    style: loginStyle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, __jsx(_LoginControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  })), props.children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -8919,7 +9114,7 @@ function Blog() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!******************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fevan%2Fwork%2Fhabits%2Fpages%2Findex.js ***!
   \******************************************************************************************************************/
@@ -8942,5 +9137,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
